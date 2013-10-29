@@ -88,7 +88,7 @@ FCKConfig.AutoGrowMax = 400 ;
 
 FCKConfig.AutoDetectLanguage	= true ;
 FCKConfig.DefaultLanguage		= 'en' ;
-if(top.fckg_isRTL() ) {
+if(parent.fckg_isRTL() ) {
   FCKConfig.ContentLangDirection	= 'rtl'
   FCKConfig.EditorAreaCSS = FCKConfig.fckgRTLCSS;
 }
@@ -399,8 +399,8 @@ FCKConfig.FlashUploadURL = FCKConfig.BasePath + 'filemanager/connectors/' + _Qui
 FCKConfig.FlashUploadAllowedExtensions	= ".(swf|flv)$" ;		// empty for all
 FCKConfig.FlashUploadDeniedExtensions	= "" ;					// empty for no one
 
-FCKConfig.dokuSmileyPath = 'http://' + top.dokuBase + 'lib/images/smileys/';
-// FCKConfig.insertedDokuSmiley = top.insertedDokuSmiley;
+FCKConfig.dokuSmileyPath = 'http://' + parent.dokuBase + 'lib/images/smileys/';
+// FCKConfig.insertedDokuSmiley = parent.insertedDokuSmiley;
 
 FCKConfig.SmileyPath	= FCKConfig.BasePath + 'images/smiley/msn/' ;
 FCKConfig.SmileyImages	= ['regular_smile.gif','sad_smile.gif','wink_smile.gif','teeth_smile.gif','confused_smile.gif','tounge_smile.gif','embaressed_smile.gif','omg_smile.gif','whatchutalkingabout_smile.gif','angry_smile.gif','angel_smile.gif','shades_smile.gif','devil_smile.gif','cry_smile.gif','lightbulb.gif','thumbs_down.gif','thumbs_up.gif','heart.gif','broken_heart.gif','kiss.gif','envelope.gif'] ;
@@ -439,8 +439,8 @@ FCKConfig.ToolbarSets["Dokuwiki"] = [
 
 FCK.getCurrentWikiNS = function () {
  var ns = "";
- if(top.getCurrentWikiNS) {
-     ns = top.getCurrentWikiNS();
+ if(parent.getCurrentWikiNS) {
+     ns = parent.getCurrentWikiNS();
  }
 
   return ns;
