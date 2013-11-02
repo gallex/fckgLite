@@ -468,7 +468,12 @@ class action_plugin_fckg_edit extends DokuWiki_Action_Plugin {
         if(!isset($INFO['userinfo']) && !$guest_toolbar) {        
             
                 echo  $this->helper->registerOnLoad(
-                    ' fck = new FCKeditor("wiki__text", "100%", "600"); 
+                    'jQuery(".page").css({"padding":"0","mergin":"0"});
+                     var h;
+                     if( typeof( window.innerHeight ) == "number" )h=window.innerHeight ;
+                     else h=document.documentElement.clientHeight;
+                     
+                     fck = new FCKeditor("wiki__text", "100%", h-100); 
                      fck.BasePath = "'.DOKU_BASE.'lib/plugins/fckg/'.$this->fck_location.'/"; 
                      fck.ToolbarSet = "DokuwikiNoGuest";  
                      fck.ReplaceTextarea();'
@@ -477,7 +482,12 @@ class action_plugin_fckg_edit extends DokuWiki_Action_Plugin {
         else if(!isset($INFO['userinfo']) && !$guest_media) {            
 
             echo  $this->helper->registerOnLoad(
-                ' fck = new FCKeditor("wiki__text", "100%", "600"); 
+                'jQuery(".page").css({"padding":"0","mergin":"0"});
+                 var h;
+                 if( typeof( window.innerHeight ) == "number")h=window.innerHeight ;
+                 else h=document.documentElement.clientHeight;
+                     
+                 fck = new FCKeditor("wiki__text", "100%", h-100); 
                  fck.BasePath = "'.DOKU_BASE.'lib/plugins/fckg/'.$this->fck_location.'/"; 
                  fck.ToolbarSet = "DokuwikiGuest";  
                  fck.ReplaceTextarea();'
@@ -486,7 +496,12 @@ class action_plugin_fckg_edit extends DokuWiki_Action_Plugin {
         
         else {
             echo  $this->helper->registerOnLoad(
-                ' fck = new FCKeditor("wiki__text", "100%", "600"); 
+                'jQuery(".page").css({"padding":"0","mergin":"0"});
+                 var h;
+                 if( typeof( window.innerHeight ) == "number")h=window.innerHeight ;
+                 else h=document.documentElement.clientHeight;
+                     
+                 fck = new FCKeditor("wiki__text", "100%", h-100); 
                  fck.BasePath = "'.DOKU_BASE.'lib/plugins/fckg/'.$this->fck_location.'/"; 
                  fck.ToolbarSet = "Dokuwiki";  
                  fck.ReplaceTextarea();'
@@ -676,12 +691,12 @@ global $INFO;
                  /><span id='fckg_timer_label'
                     style = 'display:none'>Disable editor time-out messsages </span> 
 
-     <?php  //global $useComplexTables;  if(!$useComplexTables) { ?>               
-     <label class="nowrap" for="complex_tables" >     
+     <?php  global $useComplexTables;  if(!$useComplexTables) { ?>               
+     <!--label class="nowrap" for="complex_tables" >     
         <input type="checkbox" name="complex_tables" value="complex_tables"  id = "complex_tables"                      
                           onclick="setComplexTables(1);"                      
-                     /><span id='complex_tables_label'> <?php echo $fckg_lang['complex_tables'];?> (<a href="https://www.dokuwiki.org/plugin:fckglite#table_handling" target='_blank'><?php echo $fckg_lang['whats_this']?></a>)</span></label> 
-     <?php //} ?>              
+                     /><span id='complex_tables_label'> <?php echo $fckg_lang['complex_tables'];?></span></label--> 
+     <?php } ?>              
 
       <input style="display:none;" class="button" id="edbtn__save" type="submit" name="do[save]" 
                       value="<?php echo $lang['btn_save']?>" 

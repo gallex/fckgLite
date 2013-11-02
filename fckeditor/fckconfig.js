@@ -418,7 +418,7 @@ FCKConfig.ToolbarSets["DokuwikiGuest"] = [
   ['Bold','Italic','Underline','StrikeThrough','-','Subscript','Superscript'],   
   ['OrderedList','UnorderedList'],
   ['Rule', 'Smiley', 'SpecialChar', 'Style'], [],  
-  ['Cut','Copy','Paste','PasteText', 'SpellCheck', 'Find'],   
+  ['Cut','Copy','Paste','PasteText', 'Find'],   
   ['FontFormat'], ['Undo','Redo','RemoveFormat', '-','Table' ],   
   ['Plugin_Tool',  'Delete_P' ],
   ['Source' ],   
@@ -430,11 +430,10 @@ FCKConfig.ToolbarSets["Dokuwiki"] = [
   ['Bold','Italic','Underline','StrikeThrough','-','Subscript','Superscript'],   
   ['OrderedList','UnorderedList','Outdent','Indent', 'insertHtmlCode' ],  // insertHtmlCode is footnote plugin
   ['Rule', 'Smiley', 'SpecialChar', 'Style'], [],['fonts'],  
-  ['Cut','Copy','Paste','PasteText','PasteWord', 'SpellCheck', 'Find'],   
+  ['Cut','Copy','Paste','PasteText','PasteWord', 'Find'],   
   ['FontFormat'], ['Undo','Redo','RemoveFormat', '-','Table' ],   
   ['Plugin_Tool',  'Delete_P' ],['FitWindow'],
-  ['Link','Unlink'], ['Image', 'Source','geshi' ],   
-  ['About','keyboard']  
+  ['Link','Unlink'], ['Image', 'Source','geshi']
 ] ;  
 
 FCK.getCurrentWikiNS = function () {
